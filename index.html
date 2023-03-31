@@ -32,9 +32,11 @@
       <h3>Create an Affirmation:</h3>
       <form>
         <input
+          id="AffirmationInput"
           placeholder="Affirmation"
           type="text">
         <input
+          id="AuthorInput"
           placeholder="Author"
           type="text">
         <button class="submit-button">Submit</button>
@@ -50,19 +52,7 @@
             <th>Affirmation Author</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>You got this!</td>
-            <td>Matt Black</td>
-          </tr>
-          <tr>
-            <td>You definitely got this!</td>
-            <td>Andrew Harasymiw</td>
-          </tr>
-          <tr>
-            <td>Make sure you delete these three hardcoded table rows!</td>
-            <td>Rafael Nadal</td>
-          </tr>
+        <tbody id="tBody">
         </tbody>
       </table>
     </section>
