@@ -13,6 +13,9 @@ function onReady() {
   // form submission
   $('.submit-button').on('click', createAffirmation)
 
+  // Function to delete an affirmation message
+  $('#tBody').on('click', '.deleteButton', removeAffirmation)
+
 } // End onReady
 
 function FlameThrower() {
@@ -25,26 +28,33 @@ function FreezeRay() {
 
 function createAffirmation(event) {
   event.preventDefault();
+  if ($('#AffirmationInput').val() != '' && $('#AuthorInput').val() != '' ) {
   
-  // Retrieve value of "AffirmationInput" and place into variable
-  let Affirmation_Input = $('#AffirmationInput').val()
-  console.log(Affirmation_Input);
+    // Retrieve value of "AffirmationInput" and place into variable
+    let Affirmation_Input = $('#AffirmationInput').val()
 
-  // Retrieve value of "AuthorInput" and place into variable
-  let Author_Input = $('#AuthorInput').val()
-  console.log(Author_Input);
+    // Retrieve value of "AuthorInput" and place into variable
+    let Author_Input = $('#AuthorInput').val()
 
-  // Add both Affirmation_Input and Author_Input to 
-  // the table within the id="tBody"
-  $('tBody').append(`
+    // Add both Affirmation_Input and Author_Input to 
+    // the table within the id="tBody"
+    $('#tBody').append(`
       <tr>
         <td>${Affirmation_Input}</td>
         <td>${Author_Input}</td>
+        <td>
+          <button class="deleteButton">❌</button>
+        </td>
       </tr>
     `)
+    
 
-  // Clear out the values from the input lines.
-  $('#AffirmationInput').val('')
-  $('#AuthorInput').val('')
-
+    // Clear out the values from the input lines.
+    $('#AffirmationInput').val('')
+    $('#AuthorInput').val('')
+  }
 } // End createAffirmation
+
+function removeAffirmation() { 
+  $(this).parent().parent().remove()
+} // End removeAffirmation
