@@ -80,3 +80,7 @@ tbody tr:nth-child(odd){
 tbody tr:nth-child(even){
   background: #dcdcdc;
 }
+
+#Fire-and-Ice {
+  background-color: #7a7a7a;
+}
